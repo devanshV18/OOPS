@@ -29,8 +29,8 @@ int main() {
     //Method overriding -> works fine
     Base b;
     b.show();
-    Derived d;
-    d.show();
+    Derived e;
+    e.show();
 
     return 0;
 }
