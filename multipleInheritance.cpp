@@ -19,7 +19,7 @@ class TA : public Student, public Teacher{
         string status;
 };
 
-//can play with constructors and stuff
+//can play with constructors and stuff 
 int main(){
     TA t1;
     t1.name = "Tony STark";
