@@ -17,6 +17,8 @@ class Person {
     Person(string name, int age){
         this->name = name;
         this->age = age;
+        cout << "Person Parameterised Constructor" << endl;
+
     }
 
     //NON PARAMETERISED CONSTRUCTOR PARENT CLASS
@@ -36,7 +38,7 @@ class Student : public Person { //this simply means that we want to inherit the 
     //NON PARAMETERISED CONSTRUCTOR CHILD CLASS
     
     Student(){
-        cout <<"Student class contructor" << endl;
+        cout <<"Student class Non Parameterised contructor" << endl;
     }
 
     //PARAMETERISED CONSTRUCTOR OF STUDENT CLASS
@@ -45,6 +47,8 @@ class Student : public Person { //this simply means that we want to inherit the 
     //calls person class constructor before the student constructor with name and age.
     Student(string name, int age, int rollno) : Person(name, age){
         this->rollno = rollno;
+        cout << "Student Parameterised Constructor" << endl;
+
     }
     
     void getInfo(){
@@ -60,7 +64,7 @@ class GradStudent : public Student{
     string researchArea;
 
     GradStudent(){
-        cout <<"Grad Student constructor"<< endl;
+        cout <<"Grad Student Non Parameterised constructor"<< endl;
     }
 
 
@@ -69,6 +73,7 @@ class GradStudent : public Student{
     //originating class takes in all parametrs and pass the rest two the class jsut above it. the class just above handles rest and so on. 
     GradStudent(string name, int age, int rollno, string researchArea) : Student(name, age, rollno) {
         this->researchArea = researchArea;
+        cout << "Grad Student Parameterised Constructor" << endl;
     }
 
     void getInfoGradStudent(){
@@ -84,21 +89,21 @@ int main(){
 
     //in case of declaring a gradstudent obj with the empty / default constructor
 
-    GradStudent g1; //calls the default constructor of person then student and then gradStrudent's constructor gets called
-    g1.name = "Tony";
-    g1.age = 25;
-    g1.researchArea = "Data analytics";
+    // 1.
+    // GradStudent g1; 
+    //calls the default constructor of person then student and then gradStrudent's constructor gets called
 
-    cout << "Details of g1" << endl;
-    g1.getInfo(); //prints name age rollno
-    g1.getInfoGradStudent(); //prints name age rollno reseach Area
-
+    // 2. including 1
+    // g1.name = "Tony";
+    // g1.age = 25;
+    // g1.rollno = 54;
+    // g1.researchArea = "Data analytics";
+    // g1.getInfoGradStudent();
 
     //calling parameterised constructor
-    GradStudent g2("Devansh Verma", 21, 22, "Hosting & Deployment Tech");
 
-    cout << "Details of g2" << endl;
-    g2.getInfo();
+    // 3.
+    GradStudent g2("Devansh Verma", 21, 22, "Hosting & Deployment Tech");
     g2.getInfoGradStudent();
 
     return 0;
