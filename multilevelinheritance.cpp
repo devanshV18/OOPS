@@ -93,16 +93,17 @@ int main(){
     // GradStudent g1; 
     //calls the default constructor of person then student and then gradStrudent's constructor gets called
 
-    // 2. including 1
-    // g1.name = "Tony";
-    // g1.age = 25;
-    // g1.rollno = 54;
-    // g1.researchArea = "Data analytics";
-    // g1.getInfoGradStudent();
+    // 2. including 1 -> runs all base class np constructor then runs getInfoGradStudent fxn.
+    // g1.name = "Tony"; //accesses parent class property 
+    // g1.age = 25  //accesses parent class property  
+    // g1.rollno = 54;  //accesses parent class property 
+    // g1.researchArea = "Data analytics"; //accesses own property
+    // g1.getInfoGradStudent(); // calls the print fxn of the current class, it can call print fxn of base classes as well if they are public
 
     //calling parameterised constructor
 
     // 3.
+    //calls all Parameterised constructor all both base class
     GradStudent g2("Devansh Verma", 21, 22, "Hosting & Deployment Tech");
     g2.getInfoGradStudent();
 
