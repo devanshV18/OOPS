@@ -9,12 +9,12 @@ public:
 
     Student(string name, double cgpa){
          this->name = name;
-         cgpaPtr = new float; //we created a dynamic memory allocated at runtime of type float to which out float type pointer cgpaPtr points.
-         *cgpaPtr = cgpa; //*cgpaPtr => value at the address og cgpaPtr (dereferencing) = cgpa (parameter).
+         this->cgpaPtr = new float; //we created a dynamic memory allocated at runtime of type float to which out float type pointer cgpaPtr points.
+         *(this->cgpaPtr) = cgpa; //*cgpaPtr => value at the address og cgpaPtr (dereferencing) = cgpa (parameter).
     }
 
 
-    //MPLEMENTING DEEP COPY
+    //IMPLEMENTING DEEP COPY
     Student(Student &orgObj){
         this->name = orgObj.name;
         this->cgpaPtr = new float; //allocating new memory 
@@ -39,6 +39,7 @@ int main(){
     s1.getinfo();
     s2.getinfo();
 
+    cout << endl;
 
     //lets change cgpa of s2 and name of s2
     *(s2.cgpaPtr) = 9.5;
@@ -50,6 +51,6 @@ int main(){
     s2.getinfo();
  
     // vvi ->
-    // when we cahnged cgpa at s2 and name at s3 it changes cgpa and name of s2 at the memory address allocated to s2. Thus s1 stays unchanged.
+    // when we cahnged cgpa and name for s2 it changes cgpa and name of s2 at the memory address allocated to s2. Thus s1 stays unchanged.
     //this happened because of Deep copy s2 created out of s1. -> ref notes
 }
