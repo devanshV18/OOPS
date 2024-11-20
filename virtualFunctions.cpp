@@ -16,18 +16,18 @@ public:
 };
 
 int main() {
-    // Base *bptr;
-    // Derived d;
-    // bptr = &d;
+    Base *bptr;
+    Derived d;
+    bptr = &d;
 
     // // This will now call Derived class show function as the function is virtual and overridden in child class, it is called based on the type of object the pointer is pointing to.
-    // bptr->show();  
+    bptr->show();  
 
     //direct method overlaoding.-> works fine
-    Base b;
-    b.show();
-    Derived d;
-    d.show();
+    // Base b;
+    // b.show();
+    // Derived d;
+    // d.show();
 
     return 0;
 }
