@@ -12,18 +12,19 @@ class Person {
     string name;
     int age;
 
-    //PARAMETERISED CONSTRUCTOR PARENT CLASS
+    //PARAMETERISED CONSTRUCTOR PERSON CLASS
 
     Person(string name, int age){
+        cout << "Parameterised Constructor of Person Class" << endl;
         this->name = name;
         this->age = age;
     }
 
-    //NON PARAMETERISED CONSTRUCTOR PARENT CLASS
+    //NON PARAMETERISED CONSTRUCTOR PERSON CLASS
     
-    // Person() {
-    //     cout << "Person class non parameterised constructor" << endl;
-    // }
+    Person() {
+        cout << "non parameterised constructot of Person class" << endl;
+    }
 };
 
 
@@ -33,17 +34,18 @@ class Student : public Person { //this simply means that we want to inherit the 
     public:
     int rollno;
 
-    //NON PARAMETERISED CONSTRUCTOR CHILD CLASS
+    // NON PARAMETERISED CONSTRUCTOR CHILD CLASS
     
-    // Student(){
-    //     cout <<"Student class contructor" << endl;
-    // }
+    Student(){
+        cout <<"Non Parameterised constructor of Student class" << endl;
+    }
 
     //PARAMETERISED CONSTRUCTOR OF STUDENT CLASS
 
 
     //calls person class constructor before the student constructor with name and age.
     Student(string name, int age, int rollno) : Person(name, age){
+        cout << "Parametrised constructor of Student class" << endl;
         this->rollno = rollno;
     }
     
@@ -56,8 +58,15 @@ class Student : public Person { //this simply means that we want to inherit the 
 
 
 int main(){
-    Student s1("Rahul", 21, 43);
+    //set 1
+    // Person p1;
 
-    s1.getInfo();
-    return 0;
+    //set2
+    // Student s1;
+
+    //set3
+
+    Student s2("Devansh Verma", 21, 2345);
+    s2.getInfo();
+
 }
