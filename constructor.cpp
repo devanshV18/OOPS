@@ -60,10 +60,10 @@ public:
 
 
     void getInfo(){
-        cout << "name : " << name << endl; 
-        cout << "subject : " << subject << endl; 
-        cout << "separtment : " << dept << endl; 
-        cout << "salary : " << salary << endl; 
+        cout << "name : " << this->name << endl; 
+        cout << "subject : " << this->subject << endl; 
+        cout << "separtment : " << this->dept << endl; 
+        cout << "salary : " << this->salary << endl; 
     }
 };
 
