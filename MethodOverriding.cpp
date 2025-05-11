@@ -20,10 +20,10 @@ int main() {
     //method oveririding - fails in case of pointer. -> it calls the function based on type of pointer and the type of object it is pointing too.
 
     Base *bptr; //bptr is a a base class type pointer
-    Derived d;  
+    Derived d;  //d is a derived class object
     bptr = &d; //d is a derived class object to which bptr points
 
-    // This will call Base class show function, not Derived class show function
+    // This will call Base class show function, not Derived class show function because the interface we are using to call the show fxn is a base class interface.
     bptr->show();  
 
     //Method overriding -> works fine
